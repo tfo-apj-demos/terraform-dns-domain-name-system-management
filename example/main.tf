@@ -17,7 +17,7 @@ variable "dns_server" {
 module "domain-name-system-management" {
   source  = "app.terraform.io/tfo-apj-demos/domain-name-system-management/dns"
   #source = "../../terraform-dns-management"
-  version = "1.0.4"
+  version = "~> 1.0"
 
   dns_server   = var.dns_server
   dns_realm    = var.dns_realm
