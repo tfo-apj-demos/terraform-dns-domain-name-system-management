@@ -1,27 +1,34 @@
 variable "dns_username" {
-  type = string
+  type    = string
 }
 
 variable "dns_password" {
-  type = string
+  type    = string
 }
 
 variable "dns_realm" {
-  type = string
+  type    = string
 }
 
 variable "dns_server" {
-  type = string
+  type    = string
 }
 
-variable "dns_records" {
-  description = "A list of DNS records to create."
+variable "a_records" {
+  description = "List of A records"
   type = list(object({
-    record_type = string
-    zone        = string
-    name        = string
-    addresses   = list(string) // For A and PTR records
-    cname       = string       // For CNAME records
-    ttl         = number
+    name      = string
+    addresses = list(string)
   }))
+  default = []
 }
+
+variable "cname_records" {
+  description = "List of CNAME records"
+  type = list(object({
+    name  = string
+    cname = string
+  }))
+  default = []
+}
+
