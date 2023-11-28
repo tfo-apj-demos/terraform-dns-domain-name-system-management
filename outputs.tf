@@ -6,6 +6,6 @@ output "a_record_ids" {
   value = { for k, v in dns_ptr_record.ptr_record : k => v.id }
 }*/
 
-output "cname_record_ids" {
+/*output "cname_record_ids" {
   value = { for k, v in dns_cname_record.cname_record : k => v.id }
-}
+}*/
