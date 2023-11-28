@@ -1,7 +1,3 @@
-variable "dns_server" {
-  description = "dns server fqdn"
-}
-
 resource "dns_a_record_set" "a_record" {
   for_each  = { for r in var.a_records : r.name => r }
   name      = each.value.name
