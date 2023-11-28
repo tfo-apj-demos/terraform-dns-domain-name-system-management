@@ -3,7 +3,7 @@ resource "dns_a_record_set" "a_record" {
   name      = each.value.name
   addresses = each.value.addresses
   zone      = "hashicorp.local."
-  ttl       = 604800
+  #ttl       = 604800
 }
 
 /*resource "dns_ptr_record" "ptr_record" {
@@ -18,10 +18,10 @@ resource "dns_a_record_set" "a_record" {
   ttl  = 604800
 }*/
 
-resource "dns_cname_record" "cname_record" {
+/*resource "dns_cname_record" "cname_record" {
   for_each = { for r in var.cname_records : r.name => r }
   name     = each.value.name
   cname    = each.value.cname
   zone     = "hashicorp.local."
   ttl      = 604800
-}
+}*/
