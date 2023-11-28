@@ -1,7 +1,7 @@
 
 module "domain-name-system-management" {
   source  = "app.terraform.io/tfo-apj-demos/domain-name-system-management/dns"
-  version = "1.0.0"
+  version = "1.0.1"
 
   a_records = [
     {
