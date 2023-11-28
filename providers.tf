@@ -6,12 +6,8 @@ terraform {
     }
   }
 }
-
-
 provider "dns" {
   update {
     server = var.dns_server # Using the hostname is important in order for an SPN to match
-    gssapi {
-    }
-  }       
+  }
 }
