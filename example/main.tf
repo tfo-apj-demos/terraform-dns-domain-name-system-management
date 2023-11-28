@@ -7,6 +7,7 @@ module "domain-name-system-management" {
   source  = "app.terraform.io/tfo-apj-demos/domain-name-system-management/dns"
   version = "1.0.4"
   
+  dns_server = var.dns_server
   a_records = [
     {
       name      = "test"
