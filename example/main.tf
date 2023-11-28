@@ -12,9 +12,20 @@ provider "dns" {
   }
 }
 
+variable "dns_username" {
+  type = string
+}
+
+variable "dns_password" {
+  type = string
+}
+
+variable "dns_realm" {
+  type = string
+}
+
 variable "dns_server" {
-  description = "DNS Server FQDN"
-  type        = string
+  type = string
 }
 
 resource "dns_a_record_set" "this" {
