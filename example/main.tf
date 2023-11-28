@@ -1,3 +1,8 @@
+variable "dns_server" {
+  description = "DNS Server FQDN"
+  type = string
+}
+
 module "domain-name-system-management" {
   source  = "app.terraform.io/tfo-apj-demos/domain-name-system-management/dns"
   version = "1.0.4"
