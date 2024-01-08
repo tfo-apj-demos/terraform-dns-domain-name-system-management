@@ -1,7 +1,7 @@
 resource "dns_a_record_set" "a_record" {
-  for_each  = { for r in var.a_records : r.name => r }
-  name      = each.value.name
-  addresses = each.value.addresses
+  count     = length(var.a_records)
+  name      = var.a_records[count.index].name
+  addresses = var.a_records[count.index].addresses
   zone      = "hashicorp.local."
 }
 
